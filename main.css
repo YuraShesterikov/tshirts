@@ -1,0 +1,589 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@900&family=Roboto:wght@400;700&family=Yanone+Kaffeesatz:wght@400;700&display=swap');
+
+:root {
+  --yellow: #ffbc2f;
+  --red: #d82727;
+  --black: #1b1b1b;
+  --titlesAlegrey: 'Alegreya Sans SC', sans-serif;
+  --titlesRoboto: 'Roboto', sans-serif;
+  --titlesYanone: 'Yanone Kaffeesatz', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #fcf5e6;
+  font-family: var(--titlesRoboto);
+}
+
+.wrapper {
+  overflow: hidden;
+  min-width: 1440px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul>li {
+  list-style: none;
+}
+
+.hero {
+  height: 100vh;
+  margin-bottom: 130px;
+  background: url('./img/bg/hero.jpg') center center / cover no-repeat;
+  position: relative;
+}
+
+.header {
+  width: 1290px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-top: 28px;
+}
+
+.mail {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--black);
+  text-align: center;
+}
+
+.mail__title {
+  margin-bottom: 5px;
+}
+
+.mail__content {
+  background: var(--black);
+  color: var(--yellow);
+  padding: 10px 45px;
+}
+
+.hero__content {
+  width: 1140px;
+  height: 73%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fade-slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.fade-slider__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.fade-slider__item--visible {
+  opacity: 1;
+}
+
+.fade-slider__item--type-thrist {
+  background: url('./img/content/hero/slider_pic_1.png') center center / contain no-repeat;
+}
+
+.fade-slider__item--type-games {
+  background: url('./img/content/hero/slider_pic_2.png') center center / contain no-repeat;
+}
+
+.fade-slider__item--type-presents {
+  background: url('./img/content/hero/slider_pic_3.png') center center / contain no-repeat;
+}
+
+.fade-slider__item--type-games .fade-slider__lined-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 79%);
+  white-space: nowrap;
+}
+
+.fade-slider__item--type-games .lined-text {
+  align-items: center;
+}
+
+.fade-slider__item--type-presents .fade-slider__lined-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-122%, 15%);
+}
+
+.fade-slider__item--type-presents .lined-text {
+  align-items: center;
+}
+
+.fade-slider__lined-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-154%, -49%);
+}
+
+.lined-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--titlesAlegrey);
+  font-weight: bold;
+  font-size: 64px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.lined-text__word {
+  background: var(--black);
+  padding: 5px 17px;
+  margin-bottom: -2px;
+  line-height: 1;
+}
+
+.lined-text__word--color-yellow {
+  color: var(--yellow);
+}
+
+.lined-text__word:nth-child(2n) {
+  margin-left: 10px;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 75px;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.menu__hamburger {
+  position: absolute;
+  top: 0;
+  margin-top: 28px;
+}
+
+.menu__hamburger--icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--yellow);
+}
+
+.menu--open .menu__hamburger {
+  display: none;
+}
+
+.menu--open {
+  width: 326px;
+}
+
+.menu--open .menu__header {
+  display: flex;
+}
+
+.menu--open .menu__list {
+  display: flex;
+  left: 60px;
+}
+
+.menu__header {
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  margin-top: 28px;
+  display: none;
+}
+
+.menu__close {
+  display: block;
+  transform: translate(120%, -125%)
+}
+
+.menu__close--icon {
+  width: 38px;
+  height: 38px;
+  fill: var(--yellow);
+}
+
+.menu__list {
+  position: absolute;
+  left: -400px;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.menu__item {
+  margin-bottom: 28px;
+}
+
+.menu__link {
+  font-family: var(--titlesYanone);
+  font-weight: 300;
+  font-size: 20px;
+  color: var(--yellow);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu__link:hover {
+  color: var(--red);
+}
+
+.container {
+  width: 1360px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.filter__item {
+  margin-right: 40px;
+}
+
+.filter__item:last-child {
+  margin-right: 0;
+}
+
+.filter__link {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-family: var(--titlesYanone);
+  font-weight: bold;
+  color: var(--black);
+  padding: 7px 24px;
+}
+
+.filter__link:hover {
+  color: var(--red);
+}
+
+.filter__item--active .filter__link {
+  background-color: var(--black);
+  color: var(--yellow);
+}
+
+.products__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 14px;
+  margin-bottom: 150px;
+}
+
+.products__item {
+  width: 302px;
+  height: 386px;
+  background: var(--yellow);
+  margin-bottom: 35px;
+  margin-left: 27px;
+  position: relative;
+}
+
+.products__price {
+  position: absolute;
+  margin-top: 15px;
+  left: -7px;
+  border-bottom: 45px solid black;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  height: 0;
+  width: 115px;
+  transform: rotate(0.5turn);
+}
+
+.products__cena {
+  color: rgb(252, 245, 230);
+  font-size: 35px;
+  transform: rotate(0.5turn);
+  font-family: var(--titlesYanone);
+  font-weight: bold;
+  text-align: center;
+}
+
+.prod-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.products__img {
+  display: block;
+  max-width: 90%;
+  max-height: 100%;
+}
+
+.products__desc {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 20px 30px;
+  background: rgba(35, 35, 35, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(101%);
+  transition: 0.3s;
+}
+
+.products__desc--title {
+  color: #fff;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--yellow);
+  background: var(--black);
+  font-family: var(--titlesYanone);
+  font-weight: bold;
+  font-size: 24px;
+  padding: 5px 25px;
+}
+
+.btn:hover {
+  background: #fff;
+  color: var(--red);
+}
+
+.products__item--size-big {
+  width: 630px;
+  height: 544px;
+  background: var(--black);
+}
+
+.products__item:hover .products__desc {
+  transform: translateY(0);
+}
+
+.products__item--size-big .products__price {
+  border-bottom-color: var(--yellow);
+}
+
+.products__item--size-big .products__cena {
+  color: var(--black);
+}
+
+.collections__list {
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -25px;
+}
+
+.collections__item {
+  width: 630px;
+  height: 474px;
+  margin-left: 28px;
+  background: url('./img/bg/pattern.png') center center / 125%;
+  position: relative;
+  overflow: hidden;
+}
+
+.collections__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 178%;
+  width: 75%;
+  top: -14%;
+  left: -27%;
+  background: center center / contain no-repeat;
+}
+
+.collections__item--type-guys::before {
+  background-image: url('./img/collections/collection_man.png');
+}
+
+.collections__item--type-girl::before {
+  background-image: url('./img/collections/collection_woman.png');
+  height: 176%;
+  width: 71%;
+  top: -28%;
+  left: -23%;
+}
+
+.collections__desc {
+  padding: 80px 75px 130px 285px;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.collections__desc:hover .btn {
+  background: #fff;
+  color: var(--red);
+}
+
+.collections__title {
+  font-family: var(--titlesYanone);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 70px;
+}
+
+.collections__text {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.collections__item--type-girl .collections__desc {
+  padding: 80px 60px 107px 285px;
+}
+
+.site-menu {
+  margin-bottom: 120px;
+}
+
+.site-menu__list {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.site-menu__col {
+  margin: 0 auto;
+}
+
+.site-menu__col--title {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: var(--titlesYanone);
+  text-transform: uppercase;
+}
+
+.site-menu__col--item {
+  margin-bottom: 20px;
+}
+
+.site-menu__col--item-adres {
+  margin-bottom: 30px;
+}
+
+.site-menu__col--link {
+  display: block;
+  text-decoration: none;
+  color: #afaca6;
+  font-size: 15px;
+}
+
+.site-menu__col--link:hover {
+  color: var(--red);
+}
+
+.mail-block .mail-block__link {
+  display: block;
+  text-decoration: none;
+  color: #1b1b1b;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.mail-block__link:hover {
+  background: yellow;
+  padding: 5px 0px;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.footer__item {
+  margin-right: 28px;
+  width: 540px;
+  height: 200px;
+}
+
+.footer__item:last-child {
+  margin-right: 0;
+}
+
+.footer__link {
+  display: block;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: var(--titlesYanone);
+  text-decoration: none;
+  text-transform: uppercase;
+  background: var(--black);
+  color: #fff;
+  padding: 43px 130px;
+}
+
+.footer__link:hover {
+  color: var(--red);
+}
+
+.footer__item--right {
+  background: url('./img/bg/pattern.png') center center / 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__socials__link {
+  margin-right: 50px;
+}
+
+.footer__socials__link:last-child {
+  margin-right: 0px;
+}
+
+.footer__socials--icon {
+  width: 38px;
+  height: 38px;
+}
+
+.footer__socials__link:hover {
+  fill: var(--red);
+}
